@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 :root{
-    --orange:#ff7800;
+    --orange:crimson;
     --black:#130f40;
     --light-color:#666;
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
@@ -53,6 +53,10 @@ section{
     clip-path: polygon(100% 0,93% 50%, 100% 99%,0 100%,7% 50%,0% 0%);
 }
 
+.logo{
+    animation:tracking-in-expand 0.9s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
 .btn{
     margin-top: 1rem;
     display: inline-block;
@@ -95,6 +99,7 @@ section{
 }
 
 .header .nav a{
+    animation: slideInDown 1s ease-out 0.9s forwards;
     font-size: 1.7rem;
     margin:0 1rem;
     color: var(--black);
@@ -193,7 +198,6 @@ section{
 }
 
 .header .shopping-cart .box img{
-    
     width: 30%;
 }
 
@@ -290,7 +294,7 @@ section{
     justify-content: center;
     background-size: cover;
     background-position: center;
-    background: url(backmain.jpg.jpg) no-repeat;
+    background: url(Society6.jfif) no-repeat;
     padding-top: 17rem;
     padding-bottom: 10rem;
 }
@@ -314,6 +318,10 @@ section{
     font-size: 1.7rem;
     padding: 1rem 0;
     line-height: 1.8;
+}
+
+#bounce{
+    animation: pulsate-bck 0.9s ease-in-out infinite both;
 }
 
 .features .box-container{
@@ -406,6 +414,7 @@ section{
 }
 
 .categories .box-container .box{
+    animation: scale-forward-center 1s ease 0s 1 normal forwards;
     padding:3rem 2rem;
     border-radius:.5rem;
     text-align: center;
@@ -492,6 +501,7 @@ section{
 }
 
 .blogs .box-container .box{
+    animation: zoomInDown 1s ease-out 0.5s forwards;
     overflow: hidden;
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
@@ -504,7 +514,12 @@ section{
     object-fit: cover;
 }
 
+.swiper-wrapper{
+    animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 .blogs .box-container .box .content{
+    animation: zoomInDown 1s ease-out 0.9s forwards;
     padding:2rem;
 }
 
@@ -707,4 +722,92 @@ section{
     .footer{
         text-align: center;
     }
+}
+
+@keyframes pulsate-bck {
+    0% {
+      transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+     transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    100% {
+    transform: scale(1);
+              transform: scale(1);
+    }
+  }
+ 
+ 
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  
+  @keyframes scale-in-hor-right {
+    0% {
+      transform: scaleX(0);
+              transform: scaleX(0);
+      transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+      opacity: 1;
+    }
+    100% {
+      transform: scaleX(1);
+              transform: scaleX(1);
+      transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoom-in {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomInDown {
+    0% {
+      transform: scale(0.1) translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scale-forward-center {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
